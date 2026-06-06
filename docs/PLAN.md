@@ -60,10 +60,11 @@
 
 ## Backlog Inicial
 
-| ID | Item | Aceite |
-| --- | --- | --- |
-| feat-001 | Estrutura base do template | Diretórios, docs e validação estrutural criados |
-| feat-002 | Adaptador Codex | CLI responde `detect`, `context`, `run` e `artifacts` |
-| feat-003 | Adaptador Antigravity | CLI responde `detect`, `context`, `run` e `artifacts` |
-| feat-004 | Adaptador mock | Exemplo extensível registrado em `supported_ides.json` |
-| feat-005 | Evidências | `docs/REVIEW.md` recebe resultados de validação |
+| ID | Item | Status | Aceite |
+| --- | --- | --- | --- |
+| feat-001 | Estrutura base do template | Concluído | Diretórios, docs e validação estrutural criados |
+| feat-002 | Adaptador Codex | Concluído | CLI responde `detect`, `context`, `run` e `artifacts` |
+| feat-003 | Adaptador Antigravity | Concluído | CLI responde `detect`, `context`, `run` e `artifacts` |
+| feat-004 | Adaptador mock | Concluído | Exemplo extensível registrado em `supported_ides.json` |
+| feat-005 | Evidências | Concluído | `docs/REVIEW.md` recebe resultados de validação |
+| feat-006 | Implantação configurável | Parcial | `.env.example` e `scripts/deploy.ps1` existem; alvo externo ainda precisa ser definido |

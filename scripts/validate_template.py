@@ -9,11 +9,14 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 REQUIRED_PATHS = [
+    "AGENTS.md",
+    ".env.example",
     "README.md",
     "docs/PRD.md",
     "docs/SPEC.md",
     "docs/PLAN.md",
     "docs/REVIEW.md",
+    "docs/IMPLEMENTATION_STATUS.md",
     ".codex/workflows/01-discover.md",
     ".codex/workflows/02-spec.md",
     ".codex/workflows/03-plan.md",
@@ -53,6 +56,19 @@ def check_supported_ides() -> list[str]:
     return errors
 
 
+def check_deploy_contract() -> list[str]:
+    errors: list[str] = []
+    env_example = (ROOT / ".env.example").read_text(encoding="utf-8")
+    for name in ("PYGOD_DEPLOY_TARGET", "PYGOD_DEPLOY_COMMAND"):
+        if name not in env_example:
+            errors.append(f"missing deploy env example: {name}")
+    deploy_script = (ROOT / "scripts" / "deploy.ps1").read_text(encoding="utf-8")
+    for name in ("PYGOD_DEPLOY_TARGET", "PYGOD_DEPLOY_COMMAND"):
+        if name not in deploy_script:
+            errors.append(f"deploy script does not reference: {name}")
+    return errors
+
+
 def check_adapters() -> list[str]:
     errors: list[str] = []
     for adapter in ("codex", "antigravity", "mock-ide"):
@@ -76,6 +92,7 @@ def main() -> int:
     errors = []
     errors.extend(f"missing path: {path}" for path in check_paths())
     errors.extend(check_supported_ides())
+    errors.extend(check_deploy_contract())
     errors.extend(check_adapters())
 
     if errors:
