@@ -12,6 +12,7 @@ REQUIRED_PATHS = [
     "AGENTS.md",
     ".env.example",
     "README.md",
+    "prompt-example.md",
     "docs/PRD.md",
     "docs/SPEC.md",
     "docs/PLAN.md",
