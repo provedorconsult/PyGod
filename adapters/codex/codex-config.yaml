@@ -1,0 +1,12 @@
+model: gpt-5
+mode: single-agent
+context:
+  capsule_required: true
+  max_files_per_task: 12
+commands:
+  discover: "codex"
+  spec: "codex"
+  plan: "codex"
+  implement: "codex"
+  verify: "python scripts/validate_template.py"
+  finish: "git status --short"

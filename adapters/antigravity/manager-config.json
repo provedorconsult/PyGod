@@ -1,0 +1,14 @@
+{
+  "roles": {
+    "manager": "Decompõe a demanda, define contexto e checkpoints.",
+    "writer": "Implementa alterações conforme SPEC e context capsule.",
+    "critic": "Revisa riscos, regressões e aderência ao contrato.",
+    "tester": "Executa validação automatizada e testes no navegador quando houver UI."
+  },
+  "workflow": ["discover", "spec", "plan", "implement", "verify", "finish"],
+  "guardrails": {
+    "require_human_checkpoint": true,
+    "persist_artifacts": true,
+    "mask_secrets": true
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "ides": [
+    {
+      "id": "codex",
+      "name": "OpenAI Codex",
+      "adapter": "adapters/codex/adapter.py",
+      "mode": "single-agent",
+      "artifact_dir": "outputs/codex"
+    },
+    {
+      "id": "antigravity",
+      "name": "Google Antigravity",
+      "adapter": "adapters/antigravity/adapter.py",
+      "mode": "multi-agent",
+      "artifact_dir": "artifacts/antigravity"
+    },
+    {
+      "id": "mock-ide",
+      "name": "Mock IDE",
+      "adapter": "adapters/mock-ide/adapter.py",
+      "mode": "reference",
+      "artifact_dir": "artifacts/mock-ide"
+    }
+  ]
+}
